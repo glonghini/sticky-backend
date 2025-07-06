@@ -23,4 +23,4 @@ router.resource('/stories', StoryGeneratorController).apiOnly()
 // Art styles
 router.resource('/art-styles', ArtStylesController).apiOnly()
 // Final story
-router.post('/stories/:sessionId/final-story', [FinalStoriesController, 'store'])
+router.post('/final-story/:sessionId', [FinalStoriesController, 'store'])

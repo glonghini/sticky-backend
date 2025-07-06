@@ -19,7 +19,7 @@ export default class StorySession extends BaseModel {
 
   // Tell Lucid to automatically stringify/parse this column from/to JSON
   @column({
-    serialize: (value) => (value ? JSON.stringify(value) : null),
+    // serialize: (value) => (value ? JSON.stringify(value) : null),
     prepare: (value) => (value ? JSON.stringify(value) : null),
     consume: (value) => (value ? JSON.parse(value) : null),
   })

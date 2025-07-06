@@ -28,7 +28,7 @@ export class FinalStoryService {
     // === STEP 2: Generate all scene images using the consistency prompt ===
     const imageGenerationPromises = scenes.map((scene) => {
       // Combine the master prompt with scene-specific details
-      const finalPrompt = `${consistencyPrompt}. The scene is: "${scene.narrator}". The character is ${scene.character} and they are saying "${scene.dialogue}".`
+      const finalPrompt = `${consistencyPrompt}. The scene is: "${scene.narrator}". The character is ${scene.character} and they are saying "${scene.dialogue}". Draw the dialogs inside white boxes, in the style of comic books.`
 
       return this.openai.images.generate({
         model: 'dall-e-3',
@@ -53,6 +53,8 @@ export class FinalStoryService {
         backgroundPrompt: '',
       }
     })
+
+    console.log(finalizedScenes)
 
     return finalizedScenes
   }
