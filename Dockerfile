@@ -24,13 +24,8 @@ RUN node ace build
 FROM base
 ENV NODE_ENV=production
 WORKDIR /app
-# Install fonts
-COPY ./public/static/fonts ./
-RUN mkdir -p /usr/share/fonts/truetype
-RUN install -m644 ./*.ttf /usr/share/fonts/truetype/
-RUN rm ./*.ttf
 # Proceed to the deps
 COPY --from=production-deps /app/node_modules /app/node_modules
 COPY --from=build /app/build /app
-EXPOSE 3340
+EXPOSE 3333
 CMD ["node", "./bin/server.js"]
