@@ -9,6 +9,7 @@
    - `docker run --name sticky-backend-gabriel -p 3333:3333 -d -e PORT=3333 -e HOST=0.0.0.0 -e NODE_ENV=production -e LOG_LEVEL=info -e APP_KEY=UZbi2dwK394T9URWg5xaVRGoVZlmya8n -e OPENAI_API_KEY=<YOUR_OPENAI_KEY>  sticky-backend`
    - Note: Insert your OpenAI API key in the OPEN_API_KEY env.
 5. The app should be running at localhost:3333 or 127.0.0.1:3333
+6. Optionally: you can pull from my Dockerhub repo with `docker pull glonghini/sticky-backend:latest` 
 
 ## To run locally:
 1. Make sure you have installed Node version 22 or higher
