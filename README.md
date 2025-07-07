@@ -1,5 +1,30 @@
 # AI Story Studio - Backend
 
+# Installation guide:
+
+## Docker image and container:
+1. run `git pull https://github.com/glonghini/sticky-backend.git`
+2. Build the docker image with `docker build -t sticky-backend-gabriel .`
+3. Run the image with:
+   - `docker run --name sticky-backend-gabriel -p 3333:3333 -d -e PORT=3333 -e HOST=0.0.0.0 -e NODE_ENV=production -e LOG_LEVEL=info -e APP_KEY=UZbi2dwK394T9URWg5xaVRGoVZlmya8n -e OPENAI_API_KEY=<YOUR_OPENAI_KEY>  sticky-backend`
+   - Note: Insert your OpenAI API key in the OPEN_API_KEY env.
+5. The app should be running at localhost:3333 or 127.0.0.1:3333
+
+## To run locally:
+1. Make sure you have installed Node version 22 or higher
+2. run `git pull https://github.com/glonghini/sticky-backend.git`, `cd sticky-backend` and `npm i`
+3. Once the packages are installed, create a .env file and add:
+`TZ=UTC
+PORT=3333
+HOST=127.0.0.1
+LOG_LEVEL=info
+APP_KEY=UZbi2dwK394T9URWg5xaVRGoVZlmya8n
+NODE_ENV=development
+OPENAI_API_KEY=<YOUR_OPENAI_KEY>`
+  - Note: Insert your OpenAI API key in the OPEN_API_KEY env.
+5. run `npm run dev` to run the app. It should be running at localhost:3333 or 127.0.0.1:3333 
+
+
 This is the AdonisJS backend for the AI Story Studio application. It leverages OpenAI's GPT and DALL-E models to collaboratively generate, refine, and visualize narrative stories via a RESTful API.
 
 ## Database: sqlite3
